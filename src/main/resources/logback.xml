@@ -1,6 +1,0 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <include resource="http://www.lb.lt/webservices/FxRates/FxRates.asmx/getCurrentFxRates?tp=EU" />
-    <logger name="org.springframework.web" level="INFO" />
-</configuration>

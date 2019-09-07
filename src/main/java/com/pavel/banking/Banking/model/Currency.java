@@ -1,23 +1,19 @@
 package com.pavel.banking.Banking.model;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
-@Entity
-public class CurrencyRate {
+public class Currency {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    Date date;
-    String state;
-    Double amount;
+    private String abrv;
+    private Double amount;
 
-    public CurrencyRate(Date date, String state, Double amount) {
-        this.date = date;
-        this.state = state;
+
+    public Currency(String abrv, Double amount) {
+        this.abrv = abrv;
         this.amount = amount;
     }
 
@@ -29,20 +25,12 @@ public class CurrencyRate {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
+    public String getAbrv() {
+        return abrv;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
+    public void setAbrv(String abrv) {
+        this.abrv = abrv;
     }
 
     public Double getAmount() {

@@ -5,10 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class DBInit implements CommandLineRunner {
@@ -21,21 +18,27 @@ public class DBInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         this.currencyRepository.deleteAll();
-
-
-
-
-        CurrencyRate USD = new CurrencyRate((new SimpleDateFormat("dd/MM/yyyy").parse("31/12/1998")), "USD", 3.45 );
-        CurrencyRate GBP = new CurrencyRate((new SimpleDateFormat("dd/MM/yyyy").parse("31/12/1998")), "GBP", 5.36 );
-
-        List<>
+        List<CurrencyRate> rates = new ArrayList<CurrencyRate>(){{
+            add(new CurrencyRate((new SimpleDateFormat("dd/MM/yyyy").parse("31/12/1998")), "USD", 3.45));
+            add(new CurrencyRate((new SimpleDateFormat("dd/MM/yyyy").parse("31/12/1998")), "GBP", 5.36));
+            add(new CurrencyRate((new SimpleDateFormat("dd/MM/yyyy").parse("31/12/1998")), "USD", 3.95));
+            add(new CurrencyRate((new SimpleDateFormat("dd/MM/yyyy").parse("31/12/1998")), "GBP", 5.95));
+        }};
         this.currencyRepository.saveAll(rates);
     }
 }
-
+//    // create a ArrayList String type
+//    // and Initialize an ArrayList with add()
+//    ArrayList<String> gfg = new ArrayList<String>() {
+//        {
+//            add("Geeks");
+//            add("for");
+//            add("Geeks");
+//        }
+//    };
 //@Service
 //public class DbInit implements CommandLineRunner {
-//    private UserRepository userRepository;
+//    private UserRepository putuserRepository;
 //
 //    public DbInit(UserRepository userRepository) {
 //        this.userRepository = userRepository;

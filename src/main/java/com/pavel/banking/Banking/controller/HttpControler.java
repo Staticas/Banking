@@ -1,6 +1,6 @@
 package com.pavel.banking.Banking.controller;
 
-import com.pavel.banking.Banking.model.Currency;
+import com.pavel.banking.Banking.model.CurrencyRate;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -54,7 +54,7 @@ public class HttpControler {
                 NodeList studentXmlElems = doc.getElementsByTagName("currencies");
                 System.out.println("----------------------------");
 
-                List<Currency> currencies = new ArrayList<Currency>();
+                List<CurrencyRate> currencies = new ArrayList<CurrencyRate>();
 
                 for (int temp = 0; temp < studentXmlElems.getLength(); temp++) {
 
